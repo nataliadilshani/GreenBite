@@ -458,7 +458,7 @@ footer {
 }
 
 /* Small screens: mobile devices */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     /* Navigation */
     .hamburger { display: block; }
