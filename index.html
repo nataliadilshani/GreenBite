@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles/home.css">
+    <script src="Scripts/home.js" defer></script>
+</head>
+<body>
+
+    <!--Header with nav-bar-->
+    <header>
+        <div class="nav-container">
+            <div class="logo">GreenBite</div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+    
+    <!--Hero Section-->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="fade-text active" data-image="/images/home/image1.png" id="p1">Fuel your body, feed your soul!</p>
+            <p class="fade-text" data-image="/images/home/image2.png" id="p2">Small steps daily lead to big health gains.</p>
+            <p class="fade-text" data-image="/images/home/image3.png" id="p3">Stay active, eat fresh, live happy.</p>
+            <p class="fade-text" data-image="/images/home/image4.png" id="p4">Meditation is the key to a calm mind.</p>
+            <p class="fade-text" data-image="/images/home/image5.png" id="p5">Hydrate well, nourish better, shine brighter.</p>
+            <p class="fade-text" data-image="/images/home/image6.png" id="p6">Healthy habits create a vibrant life.</p>
+            <p class="fade-text" data-image="/images/home/image7.png" id="p7">Move more, stress less, smile often.</p>
+        </div>
+    </section>
+
+    <!--Container for content-->
+    <div class="container">
+
+        <!--Health Tip of the day-->
+        <div class="card" id="health-tip-card">
+            <h2 class="tip-title">HEALTH TIP OF THE DAY</h2>
+            <div class="tip-image-wrapper">
+                <img src="images/home/health-tip1.png" alt="Health Icon" class="health-tip-img">
+                <p id="health-tip" class="tip-text">Loading tip...</p>
+             </div>
+        </div>
+
+        <!--Popular Healthy Recipes-->
+        <h2 class="section-title">POPULAR HEALTHY RECIPES</h2>
+        <div class="recipe-cards">
+
+            <div class="recipe-card">
+                <img src="images/recipes/Quinoa Salad.png" alt="Salad"> 
+                <h2><a href="recipes.html">Quinoa Salad</a></h2>
+                <p>Fresh quinoa with veggies, packed with protein and fiber.</p>
+                <p>Time: 15 min</p>
+            </div>
+
+            <div class="recipe-card">
+                <img src="images/recipes/Berry Smoothie.png" alt="Smoothie"> 
+                <h2><a href="recipes.html">Berry Smoothie</a></h2>
+                <p>A delicious mix of berries and yogurt for an energizing breakfast.</p>
+                <p>Time: 10 min</p>
+            </div>
+
+            <div class="recipe-card">
+                <img src="images/recipes/Grilled Veggies.png" alt="Grilled Veggies"> 
+                <h2><a href="recipes.html">Grilled Veggies</a></h2>
+                <p>Grilled seasonal vegetables seasoned lightly for a tasty side dish.</p>
+                <p>Time: 20 min</p>
+            </div>
+        </div>
+
+        <!--Nature Video-->
+        <div class="video-section">
+            <video src="videos/nature.mp4" autoplay muted loop></video>
+        </div>
+
+        <!--Quick Workout-->
+        <section class="workout-section">
+            <h2 class="section-title">QUICK WORKOUTS</h2>
+            <div class="cards workout-cards">
+                <div class="workout-card">
+                    <img src="images/workouts/dumbbells.png" alt="Dumbbells">
+                    <h2><a href="workouts.html">Dumbbells Workout</a></h2>
+                    <p>Strengthen your arms with simple dumbbell exercises!</p>
+                </div>
+                <div class="workout-card">
+                    <img src="images/workouts/yoga.png" alt="Yoga Pose">
+                    <h2><a href="workouts.html">Yoga</a></h2>
+                    <p>Relax and stretch with beginner yoga poses.</p>
+                </div>
+            </div>
+            <div class="link-box1">
+                <p class="routine-text">Quick routine to energize your day | 10 min | Beginners</p>
+                <a href="workouts.html"><button class="start-btn">Start Workout</button></a>
+            </div> 
+        </section>
+
+        <!--Daily Mindful Practice-->
+        <section class="mindfulness-section">
+            <h2 class="section-title">DAILY MINDFUL PRACTICES</h2>
+            <div class="cards mindful-cards">
+                <div class="mindful-card">
+                    <img src="images/mindfulness/meditation.png" alt="Meditation">
+                    <h2><a href="mindfulness.html">Meditation</a></h2>
+                    <p>5-minute guided meditation to calm your mind.</p>
+                </div>
+                <div class="mindful-card">
+                    <img src="images/mindfulness/breathing.png" alt="Deep Breathing">
+                    <h2><a href="mindfulness.html">Deep Breathing</a></h2>
+                    <p>Practice deep breathing exercises to reduce stress.</p>
+                </div>
+            </div>
+            <div class="link-box2">
+                <p class="routine-text">Daily mindful practice | 10 min | All levels</p>
+                <a href="mindfulness.html"><button class="start-btn">Start Practice</button></a>
+            </div>
+        </section>
+    </div>
+    
+
+    <!--Footer with newsletter-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <h2>GreenBite</h2>
+                <p>EXCLUSIVE LIFESTYLE, NUTRITION & HEALTH ADVICE</p>
+            </div>
+
+            <!--Subscribe Box-->
+            <div class="footer-subscribe">
+                <h2>Subscribe for Daily Health Tips</h2>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <!--Footer Navigation Links-->
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <!--Social Links-->
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="footer-copy">© 2025 GreenBite</p>
+           
+        </div>
+    </footer>
+</body>
+</html>

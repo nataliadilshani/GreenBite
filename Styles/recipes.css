@@ -1,0 +1,429 @@
+/* Apply to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Page Background and Text */
+body {
+    line-height: 1.6;
+    background-color: #f4f1e1; /* Light beige background */
+    color: #4a4a4a; /* Dark gray text */
+}
+
+/*Header & Navigation Section*/
+
+/* Top header bar */
+header {
+    background-color: #8a9a5b; /* Olive green header */
+    color: #fff; /* White text in header */
+    padding: 20px 0;
+    position: sticky; /* Stay at the top when scrolling */
+    top: 0; /* Stick to very top */
+    z-index: 1000; /* Make sure header stays above other parts */
+}
+
+/* Container for logo + nav links */
+.nav-container {
+    width: 95%;
+    max-width: 100%;
+    margin: auto; /* Center it on the page */
+    display: flex; /* Put logo and links in a row */
+    align-items: center; /* Center items up and down */
+    justify-content: space-between; /* Push logo left, links right */
+}
+
+/* Website logo text */
+.logo {
+    font-size: 200px;
+    font-weight: bold;
+    color: #f4a300; /* Warm yellow logo color */
+}
+
+/* Navigation links inside <nav> */
+nav a {
+    color: #fff; /* White text for menu items */
+    font-size: 100px;
+    text-decoration: none;
+    margin-left: 80px; /* Add space between each link */
+    font-weight: bold;
+    transition: color 0.3s;  /* Smooth color change when hovering */
+}
+
+/* Change link color when mouse is over it */
+nav a:hover {
+    color: #f4a300; /* Warm yellow hover */
+}
+
+/* Hamburger icon (for mobile menus) */
+.hamburger {
+    display: none; /* Hide hamburger by default (desktop view) */
+    font-size: 28px;
+    cursor: pointer; /* Show pointer (hand) when hovering */
+    color: #fff;
+}
+
+.hero-text {
+    color: #4a4a4a;
+    font-size: 200px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    margin: 80px auto;
+}
+
+/* Filter container */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align the label and filters */
+    justify-content: center;
+    gap: 60px;
+    padding: 100px 130px;
+    margin-bottom: 40px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+}
+
+/* Filter label */
+.filter-label span {
+    font-weight: 700;
+    font-size: 130px;
+    color: #1e6d48;
+}
+
+/* Each filter item */
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Labels for dropdowns & search */
+.filter-item label {
+    font-weight: 600;
+    font-size: 130px;
+}
+
+/* Select and input fields */
+.filter-item select,
+.filter-item input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 100px;
+}
+
+/* Catergory Tittle */
+.section-title {
+    background-color:#d1e0c3;
+    font-size: 180px;
+    color: #d2691e;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+/* RECIPE PAGE CARD STYLING */
+/* Layout for multiple cards: always 3 per row */
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 80px; /* Space between cards */
+    justify-content: center;
+    padding: 50px 50px;
+    margin-bottom: 40px;
+}
+
+/* All recipe cards */
+.recipe-card {
+    background-color: #d1e0c3;
+    padding: 50px;
+    border-radius: 12px;
+    margin-bottom: 50px; /* Space between cards */
+    text-align: center;
+    font-size: 18px;
+    color: #4a4a4a;
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.recipe-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Images inside recipe cards */
+.recipe-card img {
+    width: 100%; /* Full width */
+    height: 2000px; /* Fixed height for uniform cards */
+    object-fit: cover; /* Crop nicely without distortion */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Card titles */
+.recipe-card h2 {
+    font-size: 130px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Card descriptions */
+.recipe-card p {
+    font-size: 120px;
+    color: #4a4a4a;
+    line-height: 1.4;
+}
+
+/* links inside card titles */
+.recipe-card h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Modal container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.425); /* dark overlay */
+  font-size: 90px;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #c1dcc7;
+  margin: 5% auto; 
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%; 
+  max-width: 3500px; 
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 0.3s;
+}
+
+/* Close button */
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 150px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+/* Smooth fade in */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Table styling */
+#modal-nutrition {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#modal-title {
+  color: #1e6d48;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 150px; /* adjust size if needed */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal-content ul,
+.modal-content ol {
+  list-style-position: inside;  /* keep bullets/numbers inside the box */
+  padding-left: 20px; 
+  margin: 10px 0; 
+}
+
+.modal-content li {
+  margin-bottom: 6px;
+}
+
+#modal-nutrition th, #modal-nutrition td {
+  border: 1px solid #8b2b2b;
+  padding: 8px;
+}
+
+#modal-nutrition th {
+  background-color: #ccb7b7;
+}
+
+/*Footer*/
+footer {
+    background-color: #8a9a5b; /* Olive green background */
+    color: #fff; /* White text */
+    padding: 60px 0 30px 0;    
+    text-align: center; /* Center all text inside footer */
+}
+
+/* Footer container: stack items vertically */
+.footer-container {
+    width: 90%;               
+    max-width: 90%;         
+    margin: auto;              
+    display: flex;             
+    flex-direction: column; /* Stack items on top of each other */
+    gap: 30px; /* More space between sections */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Logo Section */
+.footer-logo-section h2 {
+    font-size: 200px;
+    margin-bottom: 10px;
+    color: #f4a300;
+}
+
+.footer-subscribe h2 {
+    font-size: 130px;  /* Huge subscribe heading */
+}
+
+.footer-logo-section p {
+    margin: 0;
+    font-size: 100px;
+}
+
+.footer-subscribe {
+    background-color: #fff; 
+    color: #4a4a4a;
+    padding: 30px 25px;
+    border-radius: 16px; 
+    max-width: 3000px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.footer-subscribe h2 {
+    color: #333; 
+    font-size: 100px; 
+    margin-bottom: 20px;
+}
+
+.footer-subscribe .subscribe-form {
+    display: flex;
+    gap: 10px;  /* Space between input and button */
+    flex-wrap: wrap; /* Stack on small screens */
+}
+
+.footer-subscribe .subscribe-form input[type="email"] {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    flex: 1; 
+    min-width: 500px;
+    font-size: 100px;
+}
+
+.footer-subscribe .subscribe-form button {
+    padding: 62px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f4a300;
+    color: #fff;
+    cursor: pointer;
+    font-size: 80px;
+}
+
+.footer-subscribe .subscribe-form button:hover {
+    background-color: #d18e00;
+}
+
+/* Menu's in Footer*/
+.footer-links {
+    display: flex; /* Arrange links in a row */
+    justify-content: center;   
+    flex-wrap: wrap; /* Wrap to next line on small screens */
+    gap: 80px;        
+    margin: 15px 0;           
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-size: 100px; 
+}
+
+.footer-links a:hover {
+    color: #f4a300;
+}
+
+/* Footer social icons */
+.footer-social {
+    display: flex; /* Arrange icons in a row */
+    justify-content: center;
+    gap: 80px;
+    margin: 15px 0;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 100px; 
+}
+
+.footer-social a:hover {
+    color: #f4a300;
+}
+
+/* Footer copyright text */
+.footer-copy {
+    margin-top: 25px;
+    font-size: 80px;
+}
+
+/* Media Queries moved to end */
+/* Filter container adjustments */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .filter-item select,
+    .filter-item input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Section title adjustments */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 32px;
+        margin: 30px 0 15px;
+    }
+
+    .recipe-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 24px;
+        margin: 20px 0 10px;
+    }
+
+    .recipe-cards {
+        grid-template-columns: 1fr; /* 1 card per row on phones */
+    }
+}

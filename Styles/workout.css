@@ -1,0 +1,510 @@
+/* Apply to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Page Background and Text */
+body {
+    line-height: 1.6;
+    background-color: #f4f1e1; /* Light beige background */
+    color: #4a4a4a; /* Dark gray text */
+}
+
+/*Header & Navigation Section*/
+
+/* Top header bar */
+header {
+    background-color: #8a9a5b; /* Olive green header */
+    color: #fff; /* White text in header */
+    padding: 20px 0;
+    position: sticky; /* Stay at the top when scrolling */
+    top: 0; /* Stick to very top */
+    z-index: 1000; /* Make sure header stays above other parts */
+}
+
+/* Container for logo + nav links */
+.nav-container {
+    width: 95%;
+    max-width: 100%;
+    margin: auto; /* Center it on the page */
+    display: flex; /* Put logo and links in a row */
+    align-items: center; /* Center items up and down */
+    justify-content: space-between; /* Push logo left, links right */
+}
+
+/* Website logo text */
+.logo {
+    font-size: 200px;
+    font-weight: bold;
+    color: #f4a300; /* Warm yellow logo color */
+}
+
+/* Navigation links inside <nav> */
+nav a {
+    color: #fff; /* White text for menu items */
+    font-size: 100px;
+    text-decoration: none;
+    margin-left: 80px; /* Add space between each link */
+    font-weight: bold;
+    transition: color 0.3s;  /* Smooth color change when hovering */
+}
+
+/* Change link color when mouse is over it */
+nav a:hover {
+    color: #f4a300; /* Warm yellow hover */
+}
+
+/* Hamburger icon (for mobile menus) */
+.hamburger {
+    display: none; /* Hide hamburger by default (desktop view) */
+    font-size: 28px;
+    cursor: pointer; /* Show pointer (hand) when hovering */
+    color: #fff;
+}
+
+.hero-text {
+    color: #4a4a4a;
+    font-size: 200px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    margin: 80px auto;
+}
+
+/* Front image */
+.front-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 0;
+}
+
+.front-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Filter container */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    padding: 100px 130px;
+    margin-bottom: 40px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+}
+
+.filter-label span {
+    font-weight: 700;
+    font-size: 130px;
+    color: #1e6d48;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.filter-item label {
+    font-weight: 600;
+    font-size: 130px;
+}
+
+.filter-item select,
+.filter-item input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 100px;
+}
+
+/* Workout cards */
+.workout-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    justify-content: center;
+    padding: 50px 50px;
+}
+
+.workout-card {
+    background-color: #d1e0c3;
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.workout-card:hover {
+    transform: translateY(-5px);
+}
+
+.workout-card img {
+    width: 100%;
+    height: 2500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.workout-card h2 {
+    font-size: 130px;
+    margin-bottom: 10px;
+}
+
+.workout-card p {
+    font-size: 120px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.6);
+    padding: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 60px;
+    border-radius: 12px;
+    width: 80%;
+    position: relative;
+}
+
+/* Workout Modal overrides */
+#workout-modal .modal-content {
+  background-color: #e8f5e9; /* softer green tone */
+  margin: 5% auto; 
+  padding: 80px;
+  border-radius: 20px;
+  width: 90%; 
+  max-width: 3200px; 
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  animation: fadeIn 0.4s;
+  text-align: left;
+}
+
+/* Modal Title */
+#workout-modal h2#modal-title {
+  font-size: 160px;
+  font-weight: 700;
+  color: #1e6d48;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Section headings inside modal */
+#workout-modal h3 {
+  font-size: 130px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+/* Ordered list for steps */
+#workout-modal ol#modal-steps {
+  font-size: 100px;
+  line-height: 1.8;
+  padding-left: 100px;
+  color: #333;
+}
+
+/* Info paragraph */
+#workout-modal p#modal-info {
+  font-size: 110px;
+  font-weight: 500;
+  color: #444;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+/* Close button specific for workout modal */
+#workout-modal .close {
+  color: #444;
+  font-size: 180px;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#workout-modal .close:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 130px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generated-workout {
+    background-color: #e8f5e9;
+    padding: 100px 130px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+#workoutPlan {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#workoutPlan li {
+    font-size: 120px;
+    font-weight: 600;
+    color: #2e7d32;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#generateWorkout {
+    font-size: 100px;
+    background-color: #f4a300;
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.generated-workout h3 {
+    font-size: 140px;
+    font-weight: 700;
+    color: #1e6d48;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    border-bottom: 8px solid #4caf50;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+
+.timer-section {
+    background-color: #ffffff;
+    padding: 60px 80px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 2000px;
+}
+
+#exerciseName {
+    font-size: 120px;
+    font-weight: 600;
+    color: #4caf50;
+}
+
+#timer {
+    font-size: 180px;
+    font-weight: 700;
+    color: #ff3d00;
+}
+
+#startTimer {
+    padding: 20px 50px;
+    font-size: 100px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #1e6d48;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#startTimer:hover {
+    background-color: #145a38;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media(max-width:1200px) {
+    .generated-workout { padding: 50px; gap: 40px; }
+    #workoutPlan li { font-size: 100px; padding: 15px; }
+    .timer-section { padding: 40px; gap: 30px; }
+    #exerciseName { font-size: 100px; }
+    #timer { font-size: 140px; }
+    #startTimer { font-size: 80px; padding: 15px 40px; }
+}
+
+@media(max-width:800px) {
+    #workoutPlan li { font-size: 80px; }
+    .timer-section { padding: 30px; gap: 20px; }
+    #exerciseName { font-size: 70px; }
+    #timer { font-size: 100px; }
+    #startTimer { font-size: 60px; padding: 12px 30px; }
+}
+
+
+
+/*Footer*/
+footer {
+    background-color: #8a9a5b; /* Olive green background */
+    color: #fff; /* White text */
+    padding: 60px 0 30px 0;    
+    text-align: center; /* Center all text inside footer */
+}
+
+/* Footer container: stack items vertically */
+.footer-container {
+    width: 90%;               
+    max-width: 90%;         
+    margin: auto;              
+    display: flex;             
+    flex-direction: column; /* Stack items on top of each other */
+    gap: 30px; /* More space between sections */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Logo Section */
+.footer-logo-section h2 {
+    font-size: 200px;
+    margin-bottom: 10px;
+    color: #f4a300;
+}
+
+.footer-subscribe h2 {
+    font-size: 130px;   /* Huge subscribe heading */
+}
+
+.footer-logo-section p {
+    margin: 0;
+    font-size: 100px;
+}
+
+.footer-subscribe {
+    background-color: #fff; 
+    color: #4a4a4a;
+    padding: 30px 25px;
+    border-radius: 16px; 
+    max-width: 3000px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.footer-subscribe h2 {
+    color: #333; 
+    font-size: 100px; 
+    margin-bottom: 20px;
+}
+
+.footer-subscribe .subscribe-form {
+    display: flex;
+    gap: 10px;              /* Space between input and button */
+    flex-wrap: wrap;         /* Stack on small screens */
+}
+
+.footer-subscribe .subscribe-form input[type="email"] {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    flex: 1; 
+    min-width: 500px;
+    font-size: 100px;
+}
+
+.footer-subscribe .subscribe-form button {
+    padding: 62px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f4a300;
+    color: #fff;
+    cursor: pointer;
+    font-size: 80px;
+}
+
+.footer-subscribe .subscribe-form button:hover {
+    background-color: #d18e00;
+}
+
+/* Menu's in Footer*/
+.footer-links {
+    display: flex; /* Arrange links in a row */
+    justify-content: center;   
+    flex-wrap: wrap; /* Wrap to next line on small screens */
+    gap: 80px;        
+    margin: 15px 0;           
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-size: 100px; 
+}
+
+.footer-links a:hover {
+    color: #f4a300;
+}
+
+/* Footer social icons */
+.footer-social {
+    display: flex; /* Arrange icons in a row */
+    justify-content: center;
+    gap: 80px;
+    margin: 15px 0;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 100px; 
+}
+
+.footer-social a:hover {
+    color: #f4a300;
+}
+
+/* Footer copyright text */
+.footer-copy {
+    margin-top: 25px;
+    font-size: 80px;
+}

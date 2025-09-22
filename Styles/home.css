@@ -1,0 +1,508 @@
+/* Apply to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Page Background and Text */
+body {
+    line-height: 1.6;
+    background-color: #f4f1e1; /* Light beige background */
+    color: #4a4a4a; /* Dark gray text */
+}
+
+/*Header & Navigation Section*/
+
+/* Top header bar */
+header {
+    background-color: #8a9a5b; /* Olive green header */
+    color: #fff; /* White text in header */
+    padding: 20px 0;
+    position: sticky; /* Stay at the top when scrolling */
+    top: 0; /* Stick to very top */
+    z-index: 1000; /* Make sure header stays above other parts */
+}
+
+/* Container for logo + nav links */
+.nav-container {
+    width: 95%;
+    max-width: 100%;
+    margin: auto; /* Center it on the page */
+    display: flex; /* Put logo and links in a row */
+    align-items: center; /* Center items up and down */
+    justify-content: space-between; /* Push logo left, links right */
+}
+
+/* Website logo text */
+.logo {
+    font-size: 200px;
+    font-weight: bold;
+    color: #f4a300; /* Warm yellow logo color */
+}
+
+/* Navigation links inside <nav> */
+nav a {
+    color: #fff; /* White text for menu items */
+    font-size: 100px;
+    text-decoration: none;
+    margin-left: 80px; /* Add space between each link */
+    font-weight: bold;
+    transition: color 0.3s;  /* Smooth color change when hovering */
+}
+
+/* Change link color when mouse is over it */
+nav a:hover {
+    color: #f4a300; /* Warm yellow hover */
+}
+
+/* Hamburger icon (for mobile menus) */
+.hamburger {
+    display: none; /* Hide hamburger by default (desktop view) */
+    font-size: 28px;
+    cursor: pointer; /* Show pointer (hand) when hovering */
+    color: #fff;
+}
+
+/*Hero Section*/
+.hero {
+    width: 100%; /* Full screen width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Overlay to make text readable */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Behind text */
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Hero text container */
+.hero-text p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; /* Prevent text overflow on large screens */
+    text-align: center;
+    font-size: 200px; /* Responsive font */
+    font-weight: bold;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade */
+    margin: 0 auto;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+/* Fully visible hero text */
+.hero-text p.active {
+    opacity: 100% ;
+}
+
+/*Container & Sections*/
+/* Main container for content, centers everything and limits width */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 50px auto;
+}
+
+/* Health Tip Card */
+.health-tip-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    max-width: 100% ;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Title */
+.tip-title {
+    font-size: 100px;
+    font-weight: 800;
+    color: #5F6D3B;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Wrapper to overlay text on image */
+.tip-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Image */
+.health-tip-img {
+    width: 100% ; /* Increase this number to make it wider */
+    height: 1500px; /* Keep height fixed */
+    object-fit: cover; /* Ensures image fills the box without distortion */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tip text over the image */
+.tip-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 600;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+
+/* Section titles */
+.section-title {
+    font-size: 130px;
+    font-weight: bold;
+    color: #f4a300;
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+
+/* Cards */
+/* All cards get the same styles */
+.card, .recipe-card, .workout-card, .mindful-card {
+    background-color: #d1e0c3; /* Light sage */
+    padding: 50px; 
+    border-radius: 12px; /* Rounded corners */
+    margin-bottom: 50px;
+    text-align: center; /* Center all text inside the card */
+    font-size: 70px;
+    color: #4a4a4a;
+    transition: transform 0.3s; /* Smooth hover */
+}
+
+/* Card hover effect */
+.card:hover, .recipe-card:hover, .workout-card:hover, .mindful-card:hover {
+    transform: translateY(-5px); /* Move the card 5px upwards */
+}
+
+/* Layout for multiple cards */
+.recipe-cards, .workout-cards, .mindful-cards {
+    display: grid; /* Use grid layout for cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; /* Space between each card */
+    justify-content: center;
+    padding: 0 50px;
+    margin-bottom: 20px;
+}
+
+/* Images inside card */
+.card img{
+    width: 100%; /* Make image fit the full width of the card */
+    border-radius: 10px;
+    margin-bottom: 10px;  /* Space below the image before text */
+}
+
+.recipe-card img {
+    width: 100%; /* Fill the card width */
+    height: 2000px; /* Fixed height for all recipe images */
+    object-fit: cover; /* Crop nicely without distortion */
+    border-radius: 20px;
+    margin-bottom: 20px; /* Keep spacing consistent */
+}
+
+.workout-card img, .mindful-card img {
+    width: 100%; /* Fill the card width */
+    height: 2300px; /* Fixed height for all recipe images */
+    object-fit: cover; /* Crop nicely without distortion */
+    border-radius: 20px;
+    margin-bottom: 20px; /* Keep spacing consistent */
+}
+
+.recipe-card h2 a, .workout-card h2 a, .mindful-card h2 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep the same color as h2 */
+    font-size: inherit; /* Keep the same font size */
+    font-weight: inherit; /* Keep the same font weight */
+}
+
+/* Text in the cards */
+.routine-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100px ;
+}
+
+/* Routine text */
+.routine-text {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/*Video Section*/
+.video-section {
+    margin: 40px 0; /* Space above and below */
+    display: flex;
+    justify-content: center;
+}
+
+/* Style for video player */
+.video-section video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;  /* Keep aspect ratio */
+}
+
+.workout-section, .mindfulness-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*Buttons*/
+button, .start-btn {
+    background-color: #8a9a5b; /* Olive green buttons */
+    color: #4a4a4a; /* Dark gray text */
+    border: none;
+    padding: 57px 70px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 70px ;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+button:hover, .start-btn:hover {
+    background-color: #f4a300; /* Warm yellow hover */
+}
+
+/*Footer*/
+footer {
+    background-color: #8a9a5b; /* Olive green background */
+    color: #fff; /* White text */
+    padding: 60px 0 30px 0;    
+    text-align: center; /* Center all text inside footer */
+}
+
+/* Footer container: stack items vertically */
+.footer-container {
+    width: 90%;               
+    max-width: 90%;         
+    margin: auto;              
+    display: flex;             
+    flex-direction: column; /* Stack items on top of each other */
+    gap: 30px; /* More space between sections */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Logo Section */
+.footer-logo-section h2 {
+    font-size: 200px;
+    margin-bottom: 10px;
+    color: #f4a300;
+}
+
+.footer-subscribe h2 {
+    font-size: 130px;   /* Huge subscribe heading */
+}
+
+.footer-logo-section p {
+    margin: 0;
+    font-size: 100px;
+}
+
+.footer-subscribe {
+    background-color: #fff; 
+    color: #4a4a4a;
+    padding: 30px 25px;
+    border-radius: 16px; 
+    max-width: 3000px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.footer-subscribe h2 {
+    color: #333; 
+    font-size: 100px; 
+    margin-bottom: 20px;
+}
+
+.footer-subscribe .subscribe-form {
+    display: flex;
+    gap: 10px;              /* Space between input and button */
+    flex-wrap: wrap;         /* Stack on small screens */
+}
+
+.footer-subscribe .subscribe-form input[type="email"] {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    flex: 1; 
+    min-width: 500px;
+    font-size: 100px;
+}
+
+.footer-subscribe .subscribe-form button {
+    padding: 62px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f4a300;
+    color: #fff;
+    cursor: pointer;
+    font-size: 80px;
+}
+
+.footer-subscribe .subscribe-form button:hover {
+    background-color: #d18e00;
+}
+
+/* Menu's in Footer*/
+.footer-links {
+    display: flex; /* Arrange links in a row */
+    justify-content: center;   
+    flex-wrap: wrap; /* Wrap to next line on small screens */
+    gap: 80px;        
+    margin: 15px 0;           
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-size: 100px; 
+}
+
+.footer-links a:hover {
+    color: #f4a300;
+}
+
+/* Footer social icons */
+.footer-social {
+    display: flex; /* Arrange icons in a row */
+    justify-content: center;
+    gap: 80px;
+    margin: 15px 0;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 100px; 
+}
+
+.footer-social a:hover {
+    color: #f4a300;
+}
+
+/* Footer copyright text */
+.footer-copy {
+    margin-top: 25px;
+    font-size: 80px;
+}
+
+/* Medium screens: tablets and small laptops */
+@media (max-width: 1200px) {
+
+    /* Header & Navigation */
+    .logo { font-size: 120px; }
+    nav a { font-size: 50px; margin-left: 40px; }
+    .hamburger { font-size: 24px; }
+
+    /* Hero section */
+    .hero-text p { font-size: 120px; }
+
+    /* Health Tip Cards */
+    .tip-title { font-size: 70px; }
+    .tip-text { font-size: 50px; }
+    .health-tip-img { height: 900px; }
+
+    /* Section Titles */
+    .section-title { font-size: 80px; }
+
+    /* Cards */
+    .card, .recipe-card, .workout-card, .mindful-card { font-size: 50px; padding: 30px; }
+    .recipe-card img { height: 1200px; }
+    .workout-card img, .mindful-card img { height: 1400px; }
+
+    /* Routine text */
+    .routine-text { font-size: 60px; }
+
+    /* Video Section */
+    .video-section video { max-width: 90%; }
+
+    /* Buttons */
+    button, .start-btn { padding: 40px 50px; font-size: 50px; }
+
+    /* Footer */
+    .footer-logo-section h2 { font-size: 120px; }
+    .footer-subscribe h2 { font-size: 80px; }
+    .footer-logo-section p { font-size: 50px; }
+    .footer-subscribe .subscribe-form input[type="email"] { font-size: 50px; min-width: 300px; }
+    .footer-subscribe .subscribe-form button { font-size: 50px; padding: 40px 20px; }
+    .footer-links a, .footer-social a { font-size: 50px; gap: 40px; }
+    .footer-copy { font-size: 50px; }
+}
+
+/* Small screens: mobile devices */
+@media (max-width: 768px) {
+
+    /* Navigation */
+    .hamburger { display: block; }
+    nav { display: none; }
+    nav a { font-size: 20px; margin-left: 10px; }
+
+    /* Hero section */
+    .hero-text p { font-size: 50px; }
+    .hero { padding: 20px 15px; }
+
+    /* Health Tip Cards */
+    .tip-title { font-size: 40px; }
+    .tip-text { font-size: 30px; }
+    .health-tip-img { height: 500px; }
+
+    /* Section Titles */
+    .section-title { font-size: 40px; }
+
+    /* Cards */
+    .card, .recipe-card, .workout-card, .mindful-card { font-size: 30px; padding: 20px; }
+    .recipe-card img { height: 700px; }
+    .workout-card img, .mindful-card img { height: 900px; }
+
+    /* Routine text */
+    .routine-text { font-size: 30px; }
+
+    /* Video Section */
+    .video-section video { max-width: 100%; }
+
+    /* Cards grid layout */
+    .recipe-cards, .workout-cards, .mindful-cards { grid-template-columns: 1fr; gap: 20px; padding: 0 20px; }
+
+    /* Buttons */
+    button, .start-btn { padding: 20px 30px; font-size: 30px; }
+
+    /* Footer */
+    .footer-container { flex-direction: column; text-align: center; }
+    .footer-links, .footer-social { flex-direction: column; gap: 10px; }
+    .footer-logo-section h2 { font-size: 60px; }
+    .footer-subscribe h2 { font-size: 40px; }
+    .footer-logo-section p { font-size: 30px; }
+    .footer-subscribe .subscribe-form input[type="email"] { font-size: 30px; min-width: 200px; }
+    .footer-subscribe .subscribe-form button { font-size: 30px; padding: 20px 15px; }
+    .footer-links a, .footer-social a { font-size: 30px; gap: 15px; }
+    .footer-copy { font-size: 20px; }
+}
+

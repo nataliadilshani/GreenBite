@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness</title>
+    <link rel="stylesheet" href="Styles/mindfulness.css">
+    <script src="Scripts/mindfulness.js" defer></script>
+</head>
+<body>
+
+    <!--Header with nav-bar-->
+    <header>
+        <div class="nav-container">
+            <div class="logo">GreenBite</div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-text">
+        <p>Mindfulness</p>
+    </section>
+
+    <!--Nature Video-->
+    <div class="video-section">
+        <video src="videos/nature3.mp4" autoplay muted loop></video>
+    </div>
+
+    <!-- Mindfulness Feature Section -->
+    <section class="mindfulness-app">
+
+        <!-- All-in-One Mindfulness Card -->
+        <div class="combined-card">
+            <h3>All-in-One Mindfulness</h3>
+
+            <!-- Guided Breathing -->
+            <h4>Guided Breathing</h4>
+            <p class="breathing-text">Follow the rhythm of your breath</p>
+            <div class="breathing-circle"></div>
+            <button id="start-breathing">Start Breathing</button>
+
+            <!-- Timer -->
+            <div class="timer-section">
+                <h4>Timer (Pomodoro / Meditation)</h4>
+                <p class="timer-text">Set your session length and stay mindful</p>
+                
+                <div class="timer-box">
+                    <input type="number" id="timer-minutes" value="10" min="1"> 
+                    <span><h4>minutes</h4></span>
+                </div>
+
+                <div id="timer-display">00:00</div>
+                <button id="start-timer">Start Timer</button>
+            </div>
+
+            <!-- Ambient Sounds -->
+            <div class="sound-section">
+                <h4>Ambient Sounds</h4>
+                <p class="sound-text">Choose a soundscape to relax your mind</p>
+
+                <div class="sound-buttons">
+                    <button onclick="playSound('sound1')">Rain</button>
+                    <button onclick="playSound('sound2')">Forest</button>
+                    <button onclick="playSound('sound3')">Ocean</button>
+                    <button onclick="playSound('sound4')">Stream</button>
+                    <button onclick="playSound('sound5')">Fire</button>
+                    <button onclick="playSound('sound6')" id="stop-sound">⏹ Stop</button>
+                </div>
+
+                <!-- Audio files -->
+                <audio id="sound1" src="sounds/rain.mp3"></audio>
+                <audio id="sound2" src="sounds/forest.mp3"></audio>
+                <audio id="sound3" src="sounds/ocean.mp3"></audio>
+                <audio id="sound4" src="sounds/stream.mp3"></audio>
+                <audio id="sound5" src="sounds/fire.mp3"></audio>
+                <audio id="sound6" src="sounds/button.mp3"></audio>
+            </div>
+        </div>
+    </section>
+
+    <!--Nature Video-->
+    <div class="video-section">
+        <video src="videos/nature2.mp4" autoplay muted loop></video>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <h2>GreenBite</h2>
+                <p>EXCLUSIVE LIFESTYLE, NUTRITION & HEALTH ADVICE</p>
+            </div>
+
+            <!--Subscribe Box-->
+            <div class="footer-subscribe">
+                <h2>Subscribe for Daily Health Tips</h2>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <!--Footer Navigation Links-->
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <!--Social Links-->
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+
+            <p class="footer-copy">© 2025 GreenBite</p>
+        </div>
+    </footer>
+
+</body>
+</html>

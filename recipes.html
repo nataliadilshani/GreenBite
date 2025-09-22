@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Recipes</title>
+    <link rel="stylesheet" href="Styles/recipes.css" >
+    <script src="Scripts/recipes.js" defer></script>
+</head>
+<body>
+    <!--Header with nav-bar-->
+    <header>
+        <div class="nav-container">
+            <div class="logo">GreenBite</div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+
+    <section class="hero-text">
+        <p>Delicious & Healthy Recipes</p>
+    </section>
+
+    <div class="filter-container">
+        <!-- Filter label -->
+        <div class="filter-label">
+            <span>Filter:</span>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-item">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="breakfast">Breakfast & Brunch</option>
+                <option value="snacks">Snacks</option>
+                <option value="desserts">Desserts</option>
+                <option value="soups">Soups</option>
+                <option value="mains">Mains & Sides</option>
+                <option value="salads">Salads</option>
+                <option value="drinks">Drinks</option>
+            </select>
+        </div>
+
+        <!-- Dietary Filter -->
+        <div class="filter-item">
+            <label for="dietary">Dietary:</label>
+            <select id="dietary">
+                <option value="all">All</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="low-carb">Low-Carb</option>
+                <option value="high-protein">High-Protein</option>
+            </select>
+        </div>
+
+        <!-- Search Box -->
+        <div class="filter-item">
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Type recipe name...">
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Breakfast & Brunch -->
+        <h2 class="section-title">Breakfast & Brunch</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="breakfast" data-dietary="vegetarian">
+                <img src="images/recipes/Overnight Oats.png" alt="Overnight Oats">
+                <h2>Overnight Oats</h2>
+                <p>Chia seeds, milk, and honey for a quick start.</p>
+            </div>
+            <div class="recipe-card card" data-category="breakfast" data-dietary="vegetarian">
+                <img src="images/recipes/Banana Pancake.png" alt="Banana Pancakes">
+                <h2>Banana Pancakes</h2>
+                <p>Fluffy pancakes for a healthy breakfast.</p>
+            </div>
+            <div class="recipe-card card" data-category="breakfast" data-dietary="vegetarian">
+                <img src="images/recipes/Egg Muffins.png" alt="Egg Muffins">
+                <h2>Egg Muffins</h2>
+                <p>Mini baked egg muffins with veggies.</p>
+            </div>
+            <div class="recipe-card card" data-category="breakfast" data-dietary="vegetarian">
+                <img src="images/recipes/Berry Parfait.png" alt="Berry Parfait">
+                <h2>Berry Parfait</h2>
+                <p>Layers of yogurt, granola, and fresh berries.</p>
+            </div>
+            <div class="recipe-card card" data-category="breakfast" data-dietary="vegetarian">
+                <img src="images/recipes/Veggie Omelette.png" alt="Veggie Omelette">
+                <h2>Veggie Omelette</h2>
+                <p>Loaded with fresh vegetables for a protein boost.</p>
+            </div>
+        </section>
+
+        <!-- Snacks -->
+        <h2 class="section-title">Snacks</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="snacks" data-dietary="vegan">
+                <img src="images/recipes/Sweet Potato Fries.png" alt="Sweet Potato Fries">
+                <h2>Sweet Potato Fries</h2>
+                <p>Baked fries with paprika and olive oil.</p>
+            </div>
+            <div class="recipe-card card" data-category="snacks" data-dietary="vegan">
+                <img src="images/recipes/Protein Bars.png" alt="Protein Bars">
+                <h2>Protein Bars</h2>
+                <p>Oats, nuts, and honey for energy on the go.</p>
+            </div>
+            <div class="recipe-card card" data-category="snacks" data-dietary="vegan">
+                <img src="images/recipes/Chickpea Snack Bowl.png" alt="Chickpea Snack Bowl">
+                <h2>Chickpea Snack Bowl</h2>
+                <p>Quick, protein-packed chickpeas with herbs.</p>
+            </div>
+            <div class="recipe-card card" data-category="snacks" data-dietary="vegan">
+                <img src="images/recipes/Zucchini Noodles.png" alt="Zucchini Noodles">
+                <h2>Zucchini Noodles</h2>
+                <p>Light veggie noodles with tomato basil sauce.</p>
+            </div>
+            <div class="recipe-card card" data-category="snacks" data-dietary="vegan">
+                <img src="images/recipes/Trail Mix.png" alt="Trail Mix">
+                <h2>Trail Mix</h2>
+                <p>Nuts, seeds, and dried fruits for an energy boost.</p>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <h2 class="section-title">Desserts</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="desserts" data-dietary="vegetarian">
+                <img src="images/recipes/Chia Pudding.png" alt="Chia Pudding">
+                <h2>Chia Pudding</h2>
+                <p>Creamy pudding with chia seeds and almond milk.</p>
+            </div>
+            <div class="recipe-card card" data-category="desserts" data-dietary="vegetarian">
+                <img src="images/recipes/Fruit Tart.png" alt="Fruit Tart">
+                <h2>Fruit Tart</h2>
+                <p>Fresh fruits on a healthy oat-based crust.</p>
+            </div>
+            <div class="recipe-card card" data-category="desserts" data-dietary="vegetarian">
+                <img src="images/recipes/Banana Nice Cream.png" alt="Banana Nice Cream">
+                <h2>Banana Nice Cream</h2>
+                <p>Frozen blended bananas for a guilt-free dessert.</p>
+            </div>
+            <div class="recipe-card card" data-category="desserts" data-dietary="vegetarian">
+                <img src="images/recipes/Energy Balls.png" alt="Energy Balls">
+                <h2>Energy Balls</h2>
+                <p>Dates, nuts, and cocoa blended into bite-size balls.</p>
+            </div>
+            <div class="recipe-card card" data-category="desserts" data-dietary="vegetarian">
+                <img src="images/recipes/Oatmeal Cookies.png" alt="Oatmeal Cookies">
+                <h2>Oatmeal Cookies</h2>
+                <p>Healthy cookies with oats, raisins, and cinnamon.</p>
+            </div>
+        </section>
+
+        <!-- Soups -->
+        <h2 class="section-title">Soups</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="soups" data-dietary="vegan">
+                <img src="images/recipes/Spinach Soup.png" alt="Spinach Soup">
+                <h2>Spinach Soup</h2>
+                <p>Creamy and healthy soup with garlic and herbs.</p>
+            </div>
+            <div class="recipe-card card" data-category="soups" data-dietary="vegan">
+                <img src="images/recipes/Tomato Soup.png" alt="Tomato Soup">
+                <h2>Tomato Soup</h2>
+                <p>Classic tomato soup with fresh basil.</p>
+            </div>
+            <div class="recipe-card card" data-category="soups" data-dietary="vegan">
+                <img src="images/recipes/Vegetable Soup.png" alt="Vegetable Soup">
+                <h2>Vegetable Soup</h2>
+                <p>Seasonal veggies simmered in a light broth.</p>
+            </div>
+            <div class="recipe-card card" data-category="soups" data-dietary="vegan">
+                <img src="images/recipes/Pumpkin Soup.png" alt="Pumpkin Soup">
+                <h2>Pumpkin Soup</h2>
+                <p>Creamy pumpkin soup with spices.</p>
+            </div>
+            <div class="recipe-card card" data-category="soups" data-dietary="vegan">
+                <img src="images/recipes/Lentil Soup.png" alt="Lentil Soup">
+                <h2>Lentil Soup</h2>
+                <p>Protein-rich lentil soup with herbs.</p>
+            </div>
+        </section>
+
+        <!-- Mains & Sides -->
+        <h2 class="section-title">Mains & Sides</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="mains" data-dietary="high-protein">
+                <img src="images/recipes/Grilled Chicken.png" alt="Grilled Chicken">
+                <h2>Grilled Chicken</h2>
+                <p>Herb-marinated grilled chicken breasts.</p>
+            </div>
+            <div class="recipe-card card" data-category="mains" data-dietary="high-protein">
+                <img src="images/recipes/Grilled Salmon.png" alt="Grilled Salmon">
+                <h2>Grilled Salmon</h2>
+                <p>Salmon fillets with lemon and herbs.</p>
+            </div>
+            <div class="recipe-card card" data-category="mains" data-dietary="low-carb">
+                <img src="images/recipes/Cauliflower Rice.png" alt="Cauliflower Rice">
+                <h2>Cauliflower Rice</h2>
+                <p>Low-carb stir-fried cauliflower rice.</p>
+            </div>
+            <div class="recipe-card card" data-category="mains" data-dietary="vegan">
+                <img src="images/recipes/Grilled Veggies.png" alt="Grilled Veggies">
+                <h2>Grilled Veggies</h2>
+                <p>Colorful vegetables lightly seasoned and grilled to perfection.</p>
+            </div>
+            <div class="recipe-card card" data-category="mains" data-dietary="vegan">
+                <img src="images/recipes/Quinoa Salad.png" alt="Quinoa Salad">
+                <h2>Quinoa Salad</h2>
+                <p>Protein-packed quinoa mixed with fresh veggies and a light dressing.</p>
+            </div>
+        </section>
+
+        <!-- Salads -->
+        <h2 class="section-title">Salads</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="salads" data-dietary="vegan">
+                <img src="images/recipes/Greek Salad.png" alt="Greek Salad">
+                <h2>Greek Salad</h2>
+                <p>Feta, cucumber, tomato, and olives with herbs.</p>
+            </div>
+            <div class="recipe-card card" data-category="salads" data-dietary="vegan">
+                <img src="images/recipes/Chickpea Salad.png" alt="Chickpea Salad">
+                <h2>Chickpea Salad</h2>
+                <p>Protein-rich salad with chickpeas and veggies.</p>
+            </div>
+            <div class="recipe-card card" data-category="salads" data-dietary="vegan">
+                <img src="images/recipes/Avocado Salad.png" alt="Avocado Salad">
+                <h2>Avocado Salad</h2>
+                <p>Creamy avocado, cherry tomatoes, and lime.</p>
+            </div>
+            <div class="recipe-card card" data-category="salads" data-dietary="vegan">
+                <img src="images/recipes/Cucumber & Tomato Salad.png" alt="Cucumber & Tomato Salad">
+                <h2>Cucumber & Tomato Salad</h2>
+                <p>Refreshing and light salad with vinaigrette.</p>
+            </div>
+            <div class="recipe-card card" data-category="salads" data-dietary="vegan">
+                <img src="images/recipes/Spinachi & Berry Salad.png" alt="Spinach & Berry Salad">
+                <h2>Spinach & Berry Salad</h2>
+                <p>Spinach, berries, nuts, and light dressing.</p>
+            </div>
+        </section>
+
+        <!-- Drinks -->
+        <h2 class="section-title">Drinks</h2>
+        <section class="recipe-cards">
+            <div class="recipe-card card" data-category="drinks" data-dietary="vegan">
+                <img src="images/recipes/Green Detox Smoothie.png" alt="Green Detox Smoothie">
+                <h2>Green Detox Smoothie</h2>
+                <p>Spinach, apple, and cucumber for detox.</p>
+            </div>
+            <div class="recipe-card card" data-category="drinks" data-dietary="vegan">
+                <img src="images/recipes/Berry Smoothie.png" alt="Berry Smoothie">
+                <h2>Berry Smoothie</h2>
+                <p>Mixed berries blended with yogurt.</p>
+            </div>
+            <div class="recipe-card card" data-category="drinks" data-dietary="high-protein">
+                <img src="images/recipes/Protein Shake.png" alt="Protein Shake">
+                <h2>Protein Shake</h2>
+                <p>Whey protein with banana for post-workout.</p>
+            </div>
+            <div class="recipe-card card" data-category="drinks" data-dietary="vegetarian">
+                <img src="images/recipes/Mango Lassi.png" alt="Mango Lassi">
+                <h2>Mango Lassi</h2>
+                <p>Refreshing yogurt-based mango drink.</p>
+            </div>
+            <div class="recipe-card card" data-category="drinks" data-dietary="vegan">
+                <img src="images/recipes/Herbal Tea.png" alt="Herbal Tea">
+                <h2>Herbal Tea</h2>
+                <p>Calming tea with chamomile and mint.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Recipe Title</h2>
+            
+            <h3>Ingredients</h3>
+            <ul id="modal-ingredients"></ul>
+
+            <h3>Steps</h3>
+            <ol id="modal-steps"></ol>
+
+            <h3>Nutrition Info</h3>
+            <table id="modal-nutrition">
+                <thead>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Footer with newsletter-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <h2>GreenBite</h2>
+                <p>EXCLUSIVE LIFESTYLE, NUTRITION & HEALTH ADVICE</p>
+            </div>
+
+            <!--Subscribe Box-->
+            <div class="footer-subscribe">
+                <h2>Subscribe for Daily Health Tips</h2>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <!--Footer Navigation Links-->
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <!--Social Links-->
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="footer-copy">© 2025 GreenBite</p>
+           
+        </div>
+    </footer>
+    
+</body>
+</html>

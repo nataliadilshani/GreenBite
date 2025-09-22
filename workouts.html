@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Generator</title>
+    <link rel="stylesheet" href="Styles/workout.css">
+    <script src="Scripts/workout.js" defer></script>
+</head>
+<body>
+    <!--Header with nav-bar-->
+    <header>
+        <div class="nav-container">
+            <div class="logo">GreenBite</div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
+
+    <section class="hero-text">
+        <p>Workout Generator</p>
+    </section>
+
+    <div class="front-image">
+        <img src="images/workouts/front-image.jpg" alt="Healthy">
+    </div>
+
+    <!-- Workout Filter -->
+    <div class="filter-container">
+        <div class="filter-label">
+            <span>Filter:</span>
+        </div>
+        <div class="filter-item">
+            <label for="type">Type:</label>
+            <select id="type">
+                <option value="all">All</option>
+                <option value="cardio">Cardio</option>
+                <option value="strength">Strength</option>
+                <option value="flexibility">Flexibility</option>
+                <option value="balance">Balance</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="duration">Duration:</label>
+            <select id="duration">
+                <option value="all">All</option>
+                <option value="short">Short (&lt;15 min)</option>
+                <option value="medium">Medium (15-30 min)</option>
+                <option value="long">Long (&gt;30 min)</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Type workout name...">
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Workouts Grid -->
+        <section class="workout-cards">
+            <div class="workout-card card" data-type="cardio" data-duration="short">
+                <img src="images/workouts/jumping-jacks.png" alt="Jumping Jacks">
+                <h2>Jumping Jacks</h2>
+                <p>Quick full-body warm-up cardio exercise.</p>
+            </div>
+            <div class="workout-card card" data-type="strength" data-duration="medium">
+                <img src="images/workouts/pushups.png" alt="Push-Ups">
+                <h2>Push-Ups</h2>
+                <p>Classic upper body strength exercise.</p>
+            </div>
+            <div class="workout-card card" data-type="flexibility" data-duration="short">
+                <img src="images/workouts/forward_bend.png" alt="Forward Bend">
+                <h2>Forward Bend Stretch</h2>
+                <p>Stretch your hamstrings and lower back.</p>
+            </div>
+            <div class="workout-card card" data-type="balance" data-duration="medium">
+                <img src="images/workouts/single_leg_stand.png" alt="Single Leg Stand">
+                <h2>Single Leg Stand</h2>
+                <p>Improve balance and core stability.</p>
+            </div>
+            <div class="workout-card card" data-type="cardio" data-duration="long">
+                <img src="images/workouts/running.png" alt="Running">
+                <h2>Running</h2>
+                <p>Endurance cardio for overall fitness.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Workout Modal -->
+    <div id="workout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Workout Name</h2>
+
+            <h3>Instructions</h3>
+            <ol id="modal-steps"></ol>
+
+            <h3>Duration & Type</h3>
+            <p id="modal-info"></p>
+        </div>
+    </div>
+
+
+    <!-- Workout Generator Filter -->
+    <section class="filter-container workout-filter">
+        <div class="filter-item">
+            <label for="bodyPart">Body Part:</label>
+            <select id="bodyPart">
+                <option value="all">All</option>
+                <option value="arms">Arms</option>
+                <option value="legs">Legs</option>
+                <option value="full body">Full Body</option>
+                <option value="core">Core</option>
+            </select>
+        </div>
+
+        <div class="filter-item">
+            <label for="equipment">Equipment:</label>
+            <select id="equipment">
+                <option value="all">Any</option>
+                <option value="none">None</option>
+                <option value="dumbbells">Dumbbells</option>
+                <option value="resistance bands">Resistance Bands</option>
+            </select>
+        </div>
+
+        <button id="generateWorkout">Generate Workout</button>
+    </section>
+
+    <!-- Generated Workout -->
+    <section class="generated-workout" style="padding: 0 130px;">
+        <h3>Workout Plan:</h3>
+        <ul id="workoutPlan"></ul>
+
+        <div class="timer-section">
+            <h3>Exercise Timer</h3>
+            <p id="exerciseName">Select a workout to start</p>
+            <p id="timer">00:00</p>
+            <button id="startTimer">Start Timer</button>
+        </div><br><br>
+    </section>
+
+
+
+    <!--Footer with newsletter-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <h2>GreenBite</h2>
+                <p>EXCLUSIVE LIFESTYLE, NUTRITION & HEALTH ADVICE</p>
+            </div>
+
+            <!--Subscribe Box-->
+            <div class="footer-subscribe">
+                <h2>Subscribe for Daily Health Tips</h2>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <!--Footer Navigation Links-->
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="calculator.html">CALCULATOR</a>
+                <a href="workouts.html">WORKOUTS</a>
+                <a href="mindfulness.html">MINDFULNESS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <!--Social Links-->
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="footer-copy">© 2025 GreenBite</p>
+           
+        </div>
+    </footer>
+</body>
+</html>
